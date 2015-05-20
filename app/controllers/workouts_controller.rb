@@ -1,10 +1,18 @@
 class WorkoutsController < ApplicationController
   before_action :find_workout, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+
   def index
-    @workouts = Workout.all.order("created_at DESC")
+      @user = current_user if current_user
+      @workouts = current_user.workouts
   end
 
   def show
+    if current_user.id == @workout.user_id
+      render :show
+    else
+      redirect_to root_path
+    end
   end
 
   def new
@@ -13,10 +21,12 @@ class WorkoutsController < ApplicationController
 
   def create
     @workout = Workout.new(workout_params)
+    @workout.user_id = current_user.id if current_user
     if @workout.save
+      flash[:notice] = "Workout created successfully"
       redirect_to @workout
     else
-      render 'new'
+      render :new
     end
   end
 

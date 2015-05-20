@@ -5,6 +5,7 @@ class CreateExercises < ActiveRecord::Migration
       t.integer :sets
       t.integer :reps
       t.references :workout, index: true
+      t.belongs_to :user
 
       t.timestamps
     end

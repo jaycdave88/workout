@@ -14,10 +14,24 @@
  *= require_self
  */
 
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 html {
     height: 100%;
+}
+p{
+    color:white;
+}
+
+h2{
+    color:rgb(48, 181, 199);
+}
+a{
+    color:#8ad8e3
+}
+a:hover{
+    color:#4bc3d4
 }
 
 body {

@@ -5,6 +5,7 @@ class CreateWorkouts < ActiveRecord::Migration
       t.string :workout
       t.string :mood
       t.string :length
+      t.belongs_to :user
 
       t.timestamps
     end
