@@ -1,1 +1,4 @@
-%h1 This is the workout #index placeholder
+- @workouts.each do |workout|
+  %h3= link_to workout.date, workout
+  %h4= workout.workout
+
