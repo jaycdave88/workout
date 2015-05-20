@@ -6,7 +6,7 @@ class CreateWorkouts < ActiveRecord::Migration
       t.string :mood
       t.string :length
 
-      t.timestamps null: false
+      t.timestamps
     end
   end
 end
