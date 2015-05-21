@@ -50,6 +50,11 @@ body {
     background: linear-gradient(90deg, #616161 10%, #9bc5c3 90%);
     /* W3C */
 }
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) { .move_right{
+    float:right;
+} }
+
+
 
 .navbar-default {
     background: rgba(250, 250, 250, 0.5);
